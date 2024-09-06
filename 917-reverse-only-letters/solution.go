@@ -5,23 +5,19 @@ import "fmt"
 func reverseOnlyLetters(s string) string {
     result := []rune(s)
 	left, right := 0, len(result) - 1
-
 	for left < right {
 		if !isLetter(result[right]) {
 			right--
 			continue
 		}
-
 		if !isLetter(result[left]) {
 			left++
 			continue
 		}
-
 		result[left], result[right] = result[right], result[left]
 		left++
 		right--
 	}
-
 	return string(result)
 }
 
